@@ -1,2 +1,3 @@
 # Kairos
 In an age of emptiness, we haven't lost passion—we've lost our way on where to begin. Kairos is your catalyst. Powered by Google Gemini, it breaks the paralysis of choice with randomized micro-tasks. Each task is a probe into your true self. Through AI, we decode your soul and help you rebuild a world of interests out of the void.
+"I’m a solo developer building Kairos, an AI-driven engine to help people fight the 'emptiness' of our time and discover their true passions. I’m at a crossroads with publishing and marketing. If you resonate with the vision of helping lost souls find their spark and want to help me take this to the next level—let’s talk and build this together!"
