@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos Discovery Search</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8daa91",
+              "primary-dark": "#758f78",
+              "background-light": "#F9F8F4", // Parchment White
+              "background-dark": "#181a18",
+              "text-main": "#2C3E2E", // Dark Slate Green/Grey
+              "text-muted": "#727973",
+              "nav-active": "#4A5D4E", // Sage Moss Green
+              "glass-border": "rgba(255, 255, 255, 0.2)",
+              "glass-bg": "rgba(255, 255, 255, 0.15)",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "serif": ["Playfair Display", "serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", // 32px
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+            boxShadow: {
+                "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
+                "float-dock": "0 15px 40px rgba(0, 0, 0, 0.08)",
+                "inner-glow": "inset 0 0 8px rgba(255, 255, 255, 0.15)"
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden pb-28">
+<header class="sticky top-0 z-40 px-6 pt-12 pb-6 transition-all duration-300 bg-background-light/95 backdrop-blur-md flex flex-col gap-5 shadow-sm border-b border-gray-100/50">
+<h1 class="font-display text-3xl font-bold tracking-tight text-text-main">Discover Flow</h1>
+<div class="relative group">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="material-symbols-outlined text-text-muted text-[22px] group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full rounded-full border-0 bg-white py-3.5 pl-12 pr-4 text-text-main ring-1 ring-inset ring-gray-200 placeholder:text-text-muted/80 focus:ring-2 focus:ring-inset focus:ring-primary/50 sm:text-sm sm:leading-6 shadow-sm transition-all" placeholder="Search for hobbies..." type="text"/>
+</div>
+</header>
+<main class="flex flex-col gap-10 w-full pt-6 pb-6">
+<section class="flex flex-col gap-4">
+<div class="px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(141,170,145,0.4)]"></div>
+<h2 class="font-display text-xl font-bold text-text-main">Easy Flow</h2>
+</div>
+<button class="text-text-muted hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-5 px-6 pb-4">
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Person sketching in a notebook" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfNxF-gwS62tQ-MyZHA7JUf4VaONJPIiNsYksKnqakGaLT0yatEmnh_XG0FL9OT8IxzA4ek3rI9sidl9HL5GvxI-VzSXSGrvGmNgAxOxYi-cHzyD1BEtSzfXaVINQdjZ8Fc5X7JffdUN_Zr7GXfbOuwJ-B4V5FKcsbT9oVrORfPBPMMz1bU5jN4hw_3Z2IufohES7L9S-P417hQv5X0NiEoQ8tdCGxsTupusK-3gNo4DOeFQ_baWUDWp9knJHZNWSXYzkb5d0dQ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Easy
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Mindful Sketching</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>20 mins</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+50 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Origami paper art" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdi7fl9SGCFxloFY4cILPouw3aFDmb9pB4e-fNPwcdmGrt2poFYdijny5-3KoeSg9MlRj13qbHAbTBa92GNfFPP2o5-86JG2teaONB4rC8vLWXDS4FjQYInM5brDGe6Ws4ELKguV4gdQh5LiifL2Xz_N8_jSbJ6HnCtwhVqWJNYcpw0NfxJcfcW0jMYFe_0KIpNBde1sHWTyufPsegXtV-wux6qIKBVVQfK69Sw-a7zLqMUjXdrvg7wSMLBXXtnoLzFXCTVSvMSA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Easy
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Zen Origami</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>15 mins</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+40 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Morning journal" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu4xxTgJP8LDoL3R8WdPK9YYRzSd1nh1yYN5oAd1YSVZglaCr7vZjx2bCecZ9BTFMKg3sO4HJjHW_blRhF0LB6nB_0meevBpSAhBipN2149Z76Fr3LwNnANpLgRLF8v6kleZGLIcyrqjmzOVkWsRkl_NoMkquYeMkuoGxO2b_U7K2DdQOfpfXRzhY1uGx95joizLORheZIqrXehNQkkNzqFfmaIV3dMpRLQIjcp3KbDwMywE0JSrKqkAjxStCTW9SmrqVhl3cEag"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Easy
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Morning Pages</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>10 mins</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+30 XP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-2.5 w-2.5 rounded-full bg-[#E6D089] shadow-[0_0_8px_rgba(230,208,137,0.4)]"></div>
+<h2 class="font-display text-xl font-bold text-text-main">Medium Flow</h2>
+</div>
+<button class="text-text-muted hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-5 px-6 pb-4">
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Synthesizer setup" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUrkrMvDzs_NSqbNvxbRhfDtzV_bRk_IagsSiou6SlNY1_MchhzdI2Tkk6osUr6HHOHjLvOm40n8Lf1_AQ55njgnnLOwiDWHfYH3NJVMAv-QR91pzvQWJo6ccQva_M4vOX-QSwC0yEatxfozsxyrw_8vsxHeiNPQO2U98o3cANX3h69tDVPqaZtxQa3w-j-EFWBqH6sfAWF_-MyMyDSSosxxqvukcrYTMQ9BaFtln4cf6qJ_NicrHIo9kS4SZsJpi8hdvpDEYjzg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Medium
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Analog Sound</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>1.5 hours</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+180 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Watercolor painting" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu4xxTgJP8LDoL3R8WdPK9YYRzSd1nh1yYN5oAd1YSVZglaCr7vZjx2bCecZ9BTFMKg3sO4HJjHW_blRhF0LB6nB_0meevBpSAhBipN2149Z76Fr3LwNnANpLgRLF8v6kleZGLIcyrqjmzOVkWsRkl_NoMkquYeMkuoGxO2b_U7K2DdQOfpfXRzhY1uGx95joizLORheZIqrXehNQkkNzqFfmaIV3dMpRLQIjcp3KbDwMywE0JSrKqkAjxStCTW9SmrqVhl3cEag"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Medium
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Watercolor Flow</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>45 mins</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+120 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Trail hiking map" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfNxF-gwS62tQ-MyZHA7JUf4VaONJPIiNsYksKnqakGaLT0yatEmnh_XG0FL9OT8IxzA4ek3rI9sidl9HL5GvxI-VzSXSGrvGmNgAxOxYi-cHzyD1BEtSzfXaVINQdjZ8Fc5X7JffdUN_Zr7GXfbOuwJ-B4V5FKcsbT9oVrORfPBPMMz1bU5jN4hw_3Z2IufohES7L9S-P417hQv5X0NiEoQ8tdCGxsTupusK-3gNo4DOeFQ_baWUDWp9knJHZNWSXYzkb5d0dQ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Medium
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Trail Mapping</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>1 hour</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+150 XP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-2.5 w-2.5 rounded-full bg-[#EF9C8E] shadow-[0_0_8px_rgba(239,156,142,0.4)]"></div>
+<h2 class="font-display text-xl font-bold text-text-main">Hard Flow</h2>
+</div>
+<button class="text-text-muted hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-5 px-6 pb-4">
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Bonsai close up" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdi7fl9SGCFxloFY4cILPouw3aFDmb9pB4e-fNPwcdmGrt2poFYdijny5-3KoeSg9MlRj13qbHAbTBa92GNfFPP2o5-86JG2teaONB4rC8vLWXDS4FjQYInM5brDGe6Ws4ELKguV4gdQh5LiifL2Xz_N8_jSbJ6HnCtwhVqWJNYcpw0NfxJcfcW0jMYFe_0KIpNBde1sHWTyufPsegXtV-wux6qIKBVVQfK69Sw-a7zLqMUjXdrvg7wSMLBXXtnoLzFXCTVSvMSA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Hard
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Advanced Bonsai</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>2 hours</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+300 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Complex synthesis wiring" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUrkrMvDzs_NSqbNvxbRhfDtzV_bRk_IagsSiou6SlNY1_MchhzdI2Tkk6osUr6HHOHjLvOm40n8Lf1_AQ55njgnnLOwiDWHfYH3NJVMAv-QR91pzvQWJo6ccQva_M4vOX-QSwC0yEatxfozsxyrw_8vsxHeiNPQO2U98o3cANX3h69tDVPqaZtxQa3w-j-EFWBqH6sfAWF_-MyMyDSSosxxqvukcrYTMQ9BaFtln4cf6qJ_NicrHIo9kS4SZsJpi8hdvpDEYjzg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Hard
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Modular Synthesis</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>3 hours</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+450 XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative h-[400px] overflow-hidden rounded-lg shadow-glass transition-transform duration-500 hover:shadow-xl">
+<img alt="Pottery wheel" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu4xxTgJP8LDoL3R8WdPK9YYRzSd1nh1yYN5oAd1YSVZglaCr7vZjx2bCecZ9BTFMKg3sO4HJjHW_blRhF0LB6nB_0meevBpSAhBipN2149Z76Fr3LwNnANpLgRLF8v6kleZGLIcyrqjmzOVkWsRkl_NoMkquYeMkuoGxO2b_U7K2DdQOfpfXRzhY1uGx95joizLORheZIqrXehNQkkNzqFfmaIV3dMpRLQIjcp3KbDwMywE0JSrKqkAjxStCTW9SmrqVhl3cEag"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/40"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-white border border-white/20 uppercase shadow-sm">
+                            Hard
+                        </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 overflow-hidden rounded-[24px] bg-glass-bg backdrop-blur-xl border border-glass-border p-5 text-white shadow-lg">
+<h3 class="font-display text-xl font-bold tracking-tight text-white mb-2 drop-shadow-md">Master Pottery</h3>
+<div class="flex items-center justify-between border-t border-white/10 pt-3">
+<div class="flex items-center gap-2 text-sm font-medium text-white/90">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>4 hours</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-bold text-green-200">
+<span class="material-symbols-outlined text-[18px] fill-1">bolt</span>
+<span>+600 XP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 left-[52px] right-[52px] z-50">
+<nav class="flex w-full items-center justify-between rounded-[32px] bg-[rgba(255,255,255,0.95)] p-[4px] backdrop-blur-[12px] shadow-float-dock h-[64px]">
+<button class="group flex h-14 w-14 items-center justify-center rounded-full text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">home</span>
+</button>
+<div class="relative flex h-14 w-14 items-center justify-center">
+<button class="z-10 flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#4A5D4E] shadow-inner-glow transition-all">
+<span class="material-symbols-outlined text-2xl text-[#FFFFFF]">search</span>
+</button>
+</div>
+<button class="group flex h-14 w-14 items-center justify-center rounded-full text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">pie_chart</span>
+</button>
+<button class="group flex h-14 w-14 items-center justify-center rounded-full text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+<button class="group flex h-14 w-14 items-center justify-center rounded-full text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</nav>
+</div>
+</div>
+</body></html>

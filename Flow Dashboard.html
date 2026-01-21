@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos Flow Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8daa91",
+              "primary-dark": "#758f78",
+              "background-light": "#F9F8F4", // Parchment White override
+              "background-dark": "#181a18",
+              "text-main": "#2C3E2E", // Dark Slate Green/Grey
+              "text-muted": "#727973",
+              "nav-active": "#4A634E", // Lighter green for active nav state
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", // 32px
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+            animation: {
+                "breathe": "breathe 4s ease-in-out infinite",
+                "sway": "sway 6s ease-in-out infinite",
+            },
+            keyframes: {
+                breathe: {
+                    '0%, 100%': { boxShadow: '0 0 0px rgba(141, 170, 145, 0)' },
+                    '50%': { boxShadow: '0 0 12px rgba(141, 170, 145, 0.6)', borderColor: '#8daa91' },
+                },
+                sway: {
+                    '0%, 100%': { transform: 'rotate(-3deg)' },
+                    '50%': { transform: 'rotate(3deg)' },
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden pb-32">
+<header class="flex flex-col gap-4 p-6 pt-12">
+<div class="flex items-center justify-between w-full">
+<span class="text-primary font-medium tracking-wide text-sm uppercase">Kairos</span>
+<button class="relative size-12 shrink-0 overflow-hidden rounded-full border-2 border-white shadow-sm ring-1 ring-primary/20">
+<img alt="Profile Avatar" class="h-full w-full object-cover" data-alt="User profile picture of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8jbWlpS3dRah4ih67bAjB3PwYsvNWRwWTMqC7oTD8ev4AA6g8Y0_T1iXgyAajJFu1TeAa70t8MuA8Ec7kZAm_uohmBxWi1PxH5k29lj-XD8AASg98JzrT3HkkwTGqO6BzBbCAh-mA5FKAiWhQo937JSpTSSBschEr9IJF3rDVRIPMmGjaCnsEyfL3ef1v5rVWWLtXqr3um9xXfdR_Hr4aCh1fS8tE_xVOltjvqShAzU92qPs_qpbRYbkfGJsSysb5Ot-h1pgnVg"/>
+</button>
+</div>
+<div class="w-full">
+<h1 class="text-2xl font-bold text-[#141514] dark:text-white leading-tight">
+            Good evening, find your peace in this moment.
+        </h1>
+</div>
+</header>
+<main class="flex flex-col gap-8">
+<section class="flex flex-col items-center justify-center px-6">
+<div class="relative flex items-center justify-center size-64">
+<svg class="size-full rotate-[-90deg]" viewBox="0 0 100 100">
+<circle class="dark:stroke-neutral-800" cx="50" cy="50" fill="none" r="45" stroke="#e5e7eb" stroke-width="6"></circle>
+<circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="45" stroke="#8daa91" stroke-dasharray="283" stroke-dashoffset="147" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+<div class="mb-2 size-24 animate-sway opacity-90">
+<img alt="3D seedling sprouting from soil" class="w-full h-full object-contain drop-shadow-lg rounded-md" data-alt="Cute 3D style seedling icon green plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADc34ZKSufazNbWMfG--pa5FSpaAylSAsltQFkm5qM0_MjOhXSRy7YNIXIc76S5Z1ASlxn5Ja4pfitmnA5UUovKmwdWVeChnO0NbKdl8TsRqe1U4Pkc23H-U5ybnoiNjoIDkHUYt-qgKbUJqC8Z4VNnF8rJvBcM2NjC9XapV8HDC3jZ443kp3DBK54POGs2wFTXOqo7-LCv2a34xKTdJ4GYgaOVNJsTcNgNHorEn0gQ_7QTzdg5aku0jybTBjv9c-ibk_GUIabdA"/>
+</div>
+<h2 class="text-2xl font-bold text-[#141514] dark:text-white">12/25</h2>
+<p class="text-sm font-medium text-text-muted">Daily Growth</p>
+</div>
+</div>
+</section>
+<section class="px-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-[#141514] dark:text-white">Today's Challenge</h3>
+<button class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">refresh</span>
+</button>
+</div>
+<div class="group relative overflow-hidden rounded-lg bg-white dark:bg-[#252525] shadow-sm animate-breathe border border-transparent transition-all">
+<div class="flex flex-col md:flex-row">
+<div class="h-48 w-full md:w-1/3 bg-cover bg-center" data-alt="Close up of a person sketching in a sketchbook with a pencil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBfNxF-gwS62tQ-MyZHA7JUf4VaONJPIiNsYksKnqakGaLT0yatEmnh_XG0FL9OT8IxzA4ek3rI9sidl9HL5GvxI-VzSXSGrvGmNgAxOxYi-cHzyD1BEtSzfXaVINQdjZ8Fc5X7JffdUN_Zr7GXfbOuwJ-B4V5FKcsbT9oVrORfPBPMMz1bU5jN4hw_3Z2IufohES7L9S-P417hQv5X0NiEoQ8tdCGxsTupusK-3gNo4DOeFQ_baWUDWp9knJHZNWSXYzkb5d0dQ');">
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#141514] dark:text-white">
+                                Recommended
+                            </div>
+</div>
+<div class="flex flex-1 flex-col justify-between p-6">
+<div class="mb-4">
+<h4 class="text-xl font-bold text-[#141514] dark:text-white mb-1">Mindful Sketching</h4>
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>15 mins</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-base">air</span>
+<span>Breathwork included</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="px-6 flex items-center justify-between">
+<h3 class="text-lg font-bold text-[#141514] dark:text-white">Curated For You</h3>
+<button class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">refresh</span>
+</button>
+</div>
+<div class="flex gap-4 overflow-x-auto px-6 pb-4 no-scrollbar snap-x snap-mandatory">
+<div class="relative flex-none w-72 h-96 snap-center overflow-hidden rounded-lg shadow-md group">
+<img alt="Hands planting a small plant in soil" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Hands working with soil and plants urban gardening" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdi7fl9SGCFxloFY4cILPouw3aFDmb9pB4e-fNPwcdmGrt2poFYdijny5-3KoeSg9MlRj13qbHAbTBa92GNfFPP2o5-86JG2teaONB4rC8vLWXDS4FjQYInM5brDGe6Ws4ELKguV4gdQh5LiifL2Xz_N8_jSbJ6HnCtwhVqWJNYcpw0NfxJcfcW0jMYFe_0KIpNBde1sHWTyufPsegXtV-wux6qIKBVVQfK69Sw-a7zLqMUjXdrvg7wSMLBXXtnoLzFXCTVSvMSA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="mb-2 inline-block rounded-full bg-primary/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">Nature</span>
+<h4 class="text-2xl font-bold text-white leading-tight">Urban Gardening</h4>
+<p class="mt-1 text-sm text-white/80 line-clamp-2">Connect with the earth even in a small space.</p>
+</div>
+</div>
+<div class="relative flex-none w-72 h-96 snap-center overflow-hidden rounded-lg shadow-md group">
+<img alt="Synthesizer keyboard with colorful knobs" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Synthesizer and music production equipment lo-fi beats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUrkrMvDzs_NSqbNvxbRhfDtzV_bRk_IagsSiou6SlNY1_MchhzdI2Tkk6osUr6HHOHjLvOm40n8Lf1_AQ55njgnnLOwiDWHfYH3NJVMAv-QR91pzvQWJo6ccQva_M4vOX-QSwC0yEatxfozsxyrw_8vsxHeiNPQO2U98o3cANX3h69tDVPqaZtxQa3w-j-EFWBqH6sfAWF_-MyMyDSSosxxqvukcrYTMQ9BaFtln4cf6qJ_NicrHIo9kS4SZsJpi8hdvpDEYjzg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="mb-2 inline-block rounded-full bg-purple-500/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">Creative</span>
+<h4 class="text-2xl font-bold text-white leading-tight">Lo-fi Beats Mixing</h4>
+<p class="mt-1 text-sm text-white/80 line-clamp-2">Find your rhythm in the quiet moments.</p>
+</div>
+</div>
+<div class="relative flex-none w-72 h-96 snap-center overflow-hidden rounded-lg shadow-md group">
+<img alt="A person painting on a canvas" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Artistic painting session with watercolors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu4xxTgJP8LDoL3R8WdPK9YYRzSd1nh1yYN5oAd1YSVZglaCr7vZjx2bCecZ9BTFMKg3sO4HJjHW_blRhF0LB6nB_0meevBpSAhBipN2149Z76Fr3LwNnANpLgRLF8v6kleZGLIcyrqjmzOVkWsRkl_NoMkquYeMkuoGxO2b_U7K2DdQOfpfXRzhY1uGx95joizLORheZIqrXehNQkkNzqFfmaIV3dMpRLQIjcp3KbDwMywE0JSrKqkAjxStCTW9SmrqVhl3cEag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="mb-2 inline-block rounded-full bg-blue-500/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">Art</span>
+<h4 class="text-2xl font-bold text-white leading-tight">Watercolor Flow</h4>
+<p class="mt-1 text-sm text-white/80 line-clamp-2">Let the colors blend naturally.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="px-6 flex items-center justify-between">
+<h3 class="text-lg font-bold text-[#141514] dark:text-white">Social Den</h3>
+<button class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">refresh</span>
+</button>
+</div>
+<div class="flex gap-4 overflow-x-auto px-6 pb-4 no-scrollbar snap-x snap-mandatory">
+<div class="relative flex-none w-64 snap-center flex flex-col justify-between overflow-hidden rounded-lg bg-white dark:bg-[#252525] p-4 shadow-sm border border-transparent hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-3">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="User 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#252525] object-cover" data-alt="User avatar male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbq70LdiSDR64ktibYdoIFAhhXET7cNAzB5DcIYBnNTR-lxNfr8vCmpNmz34HvOEm4Ej5_RWfSwTlcXFIudp8uWSyEpyoPkFMQc9QSL7JHIdJpLjN3LEbPuUpREDbqRSKIlVl_FTVJToq_RQ1YTJh2CQg46dWY-3gwDJlrdf3Fzo0gbKz9Y2JiXd1QooLM-8wzDPmMxNWdSu21UMUzBe26dXOC5-chdr8noHKfxLOTEHh9pwgRP_FbE7JefPEoVNEbPX1h_RK0Q"/>
+<img alt="User 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#252525] object-cover" data-alt="User avatar female" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oe0QHEFagOqx0uYROviPLWDWZSSG_xY9Qfp-d74KEBQeuWhVp0hC9rvDVwVXmpGOaJDbbivI19ZbkH5uI4Skvt7SQIOFDKHOgJNTPaWN445XGegxgXsNjBNwZwyMbSn9I4bfqlHbVxamAtW_9HV0wySrgyfEebVOkXFcI3ujVlrPYgzsfzsu0jzi6akmXDyJc0Bmd4y3qyUpJ1OJLY4GZ3hBWeHkTSkImMh9UR8utMW0Q3tA-xvReyo1-RZhVGhPDh0X2zaosQ"/>
+<img alt="User 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#252525] object-cover" data-alt="User avatar male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFsvdQoTZqMv7N1-HnI_dDp67hJ_GGxCp2cfaQ_8URvvmOXsJMT0HXqHoyFm7Wi2IdR2XjHXBZBEoDJ5EhXHyDAYStoOSOMzK_NLtgCs_I6ddxzrPD8uDL4OFsFzTWxBSE4IMWZ4NnfGRdL9Fhs-9fZVneRtfMoFaq8_wXxrOgXWJoQTyNR9d8v2lbZSNaluYcFCW9qmJA6j-kpxwB627o9mhb_bl4v9YgMhhfTbR94F-NCepWtLHkZ6pS2spI91Dcb-p2f8VCrg"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-2 ring-white dark:bg-gray-700 dark:ring-[#252525]">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-300">+39</span>
+</div>
+</div>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-md">42 Active</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#141514] dark:text-white leading-tight">Pottery Throwdown</h4>
+<p class="text-sm text-text-muted mt-1">Community • Casual</p>
+</div>
+<div class="mt-4 flex items-center gap-2 rounded-full bg-[#f0f4f1] dark:bg-white/10 p-2 pr-4 w-fit">
+<div class="flex items-center justify-center size-6 rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<span class="text-xs font-semibold text-primary dark:text-primary-dark">AI Referee Active</span>
+</div>
+</div>
+<div class="relative flex-none w-64 snap-center flex flex-col justify-between overflow-hidden rounded-lg bg-white dark:bg-[#252525] p-4 shadow-sm border border-transparent hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-3">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="User 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#252525] object-cover" data-alt="User avatar male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCoRp6fuKicD7kErvZkEmr8PPlIi95Y5KxIwDIbY6MVz4ROG4xvI1BKVnh6g32BGF0iiHTRjgAfI--5n6egUjCP7ot7A3XHBqP3lc9fNjbAdBIY_M_BkcdVM1MpPqK1ypXVJb5_mswgIQH1LeJQcOZS-LgXHhbqUt9NgJ3A4YfQKwpYf3mkSgO12R4egpgMJZRJHKPXQ5QVBrNIbleaShv-o3VQJ97BG2aM_oXKoH7O7dhlEOXDysBBq1-XolN8w8n3tD_4jfi7w"/>
+<img alt="User 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#252525] object-cover" data-alt="User avatar female" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEblP30lJ3Oeqp4-PdLA60DW4ZKfSSAr_lOdSNimIZr5_R_6mxtyOqK33t-SqvyTfy6Bf52HWvdeK6NPW8qxXMz91PeMHyUw828CC7-wWZAbtd0dV1mek_vhaKkV78XfyLbXL3TWAcl-Cpi-SYFCT7kTjDQJEEJ2WIOr4Poa3rzWmlFZ5VE_CK6g-VXqg_xC5RHTkV4idO5yS9avvFAUru0svQiYBTAFaNxL4uMl68t5NNbm8ETf6iv5OvPYWPhaDTi-BvuasGtA"/>
+</div>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-md">12 Active</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#141514] dark:text-white leading-tight">Speed Chess</h4>
+<p class="text-sm text-text-muted mt-1">Competitive • Fast</p>
+</div>
+<div class="mt-4 flex items-center gap-2 rounded-full bg-[#f0f4f1] dark:bg-white/10 p-2 pr-4 w-fit opacity-50 grayscale">
+<div class="flex items-center justify-center size-6 rounded-full bg-gray-400 text-white">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">AI Referee Inactive</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 left-[52px] right-[52px] z-50 flex h-[64px] items-center justify-between rounded-[32px] bg-white/90 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+<button class="flex size-12 items-center justify-center rounded-full bg-[#4A5D4E] text-white shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-2xl">home</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95">
+<span class="material-symbols-outlined text-2xl">pie_chart</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+</div>
+</body></html>

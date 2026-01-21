@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos - Privacy Protection</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#739072", // Sage Moss Green
+                        "background-light": "#F9F8F4", // Parchment White
+                        "background-dark": "#1C241D",
+                        "text-main": "#2C332E",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-text-main dark:text-[#E0E5E0] transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col pb-32">
+<div class="flex items-center px-4 py-4 justify-between sticky top-0 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md transition-all duration-300">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors active:scale-95 text-primary">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">Legal Pact</div>
+<div class="size-10"></div> 
+</div>
+<main class="flex-1 px-8 pt-6 animate-[fadeIn_0.8s_ease-out]">
+<div class="mb-10 text-center">
+<div class="inline-flex items-center justify-center p-4 mb-6 rounded-full bg-primary/10 text-primary shadow-sm dark:shadow-none">
+<span class="material-symbols-outlined text-[28px]">shield_lock</span>
+</div>
+<h1 class="font-serif text-[34px] font-bold leading-[1.2] text-[#1A211C] dark:text-white tracking-tight">
+                    Privacy<br/>Protection
+                </h1>
+</div>
+<div class="prose prose-lg prose-stone dark:prose-invert mx-auto max-w-lg">
+<div class="space-y-8 text-[16px] leading-[2.1] font-normal text-gray-600 dark:text-gray-300">
+<p class="first-letter:text-4xl first-letter:font-serif first-letter:text-primary first-letter:float-left first-letter:mr-2 first-letter:mt-[-6px]">
+                        At Kairos, we believe that your journey into flow states is a deeply personal experience. Your privacy is not just a policy feature; it is the foundation of our pact with you. We treat your data with the reverence it deserves, ensuring a sanctuary for your exploration.
+                    </p>
+<div>
+<h3 class="font-serif text-lg font-semibold text-[#1A211C] dark:text-white mb-2">Data Collection &amp; Usage</h3>
+<p>
+                            We collect only what is necessary to guide your discovery. This includes your hobby preferences, interaction patterns, and feedback on suggestions. This data allows our AI to tailor a path unique to your mind and spirit, acting as a compass rather than a tracker.
+                        </p>
+</div>
+<div>
+<h3 class="font-serif text-lg font-semibold text-[#1A211C] dark:text-white mb-2">Unwavering Transparency</h3>
+<p>
+                            Transparency is our guiding light. We do not sell, trade, or transfer your personal identification information to outside parties. Your digital footprint within Kairos remains within our ecosystem, used solely to enhance your personal experience.
+                        </p>
+</div>
+<div>
+<h3 class="font-serif text-lg font-semibold text-[#1A211C] dark:text-white mb-2">Security Architecture</h3>
+<p>
+                            Security measures are woven into every layer of our architecture. We employ state-of-the-art end-to-end encryption to protect your personal information, ensuring that your exploration remains a safe harbor from digital noise.
+                        </p>
+</div>
+<div>
+<h3 class="font-serif text-lg font-semibold text-[#1A211C] dark:text-white mb-2">Your Sovereignty</h3>
+<p>
+                            You hold the keys to your data. At any moment, you may request to view, modify, or erase the information you have entrusted to us. We are merely the custodians of your digital journey, and you remain its captain.
+                        </p>
+</div>
+</div>
+</div>
+<div class="mt-16 mb-8 flex justify-center opacity-20 dark:opacity-10">
+<span class="material-symbols-outlined text-5xl text-primary animate-[pulse_4s_ease-in-out_infinite]">spa</span>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background-light via-background-light/95 to-transparent dark:from-background-dark dark:via-background-dark/95 z-40 flex justify-center pb-8 pt-12">
+<button class="w-full max-w-sm bg-primary hover:bg-primary/90 text-white font-medium text-[17px] py-4 px-8 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.01] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Close</span>
+</button>
+</div>
+</div>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</body></html>
