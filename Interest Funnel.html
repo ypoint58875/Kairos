@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos - Interest Funnel</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8daa91", // Sage Green
+                        "primary-dark": "#76917a",
+                        "background-light": "#f7f7f7", // Very light grey/white
+                        "background-dark": "#181a18", // Soft dark
+                        "card-light": "#ffffff",
+                        "card-dark": "#222422",
+                        "text-main": "#141514",
+                        "text-sub": "#727973",
+                        "dock-active": "#4A5D4E", // Dark Sage Moss Green
+                        "icon-inactive": "#5A5A5A", // Dark Grey
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(141, 170, 145, 0.3)',
+                        'dock': '0 15px 40px rgba(0,0,0,0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+        @keyframes breathe {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.02); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+        .animate-breathe {
+            animation: breathe 6s ease-in-out infinite;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 transition-colors duration-300">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="flex items-center px-6 py-4 justify-between bg-transparent z-10">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-medium tracking-wide text-text-main dark:text-white opacity-90">Kairos</h1>
+<div class="size-10"></div>
+</header>
+<main class="flex-1 flex flex-col items-center w-full px-6 pt-2 pb-32 overflow-y-auto no-scrollbar">
+<div class="flex w-full justify-center mb-8">
+<div class="flex h-10 w-64 items-center justify-center rounded-full bg-[#e8eae8] dark:bg-[#2a2c2a] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full has-[:checked]:bg-white dark:has-[:checked]:bg-[#3a3c3a] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-xs font-medium tracking-wide text-text-main dark:text-gray-200">Weekly</span>
+<input checked="" class="invisible w-0 absolute" name="time-filter" type="radio" value="Weekly"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full has-[:checked]:bg-white dark:has-[:checked]:bg-[#3a3c3a] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-xs font-medium tracking-wide text-text-sub hover:text-text-main dark:text-gray-400 dark:hover:text-gray-200">All Time</span>
+<input class="invisible w-0 absolute" name="time-filter" type="radio" value="All Time"/>
+</label>
+</div>
+</div>
+<div class="relative w-full aspect-square max-h-[360px] flex items-center justify-center mb-6">
+<svg class="w-full h-full drop-shadow-sm" viewBox="0 0 300 280">
+<defs>
+<radialGradient cx="50%" cy="50%" fx="50%" fy="50%" id="radar-gradient" r="50%">
+<stop offset="0%" stop-color="#8daa91" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#8daa91" stop-opacity="0.1"></stop>
+</radialGradient>
+</defs>
+<g class="stroke-gray-200 dark:stroke-gray-700 fill-none" stroke-width="1">
+<path d="M150 40 L245 109 L209 221 L91 221 L55 109 Z"></path>
+<path d="M150 73 L213 119 L189 194 L111 194 L87 119 Z" opacity="0.6"></path>
+<path d="M150 106 L181 129 L169 167 L131 167 L119 129 Z" opacity="0.4"></path>
+<line x1="150" x2="150" y1="140" y2="40"></line>
+<line x1="150" x2="245" y1="140" y2="109"></line>
+<line x1="150" x2="209" y1="140" y2="221"></line>
+<line x1="150" x2="91" y1="140" y2="221"></line>
+<line x1="150" x2="55" y1="140" y2="109"></line>
+</g>
+<path class="fill-primary stroke-primary animate-breathe" d="M150 50 L220 115 L175 190 L100 200 L65 115 Z" fill-opacity="0.6" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="fill-white stroke-primary stroke-2" cx="150" cy="50" r="3"></circle>
+<circle class="fill-white stroke-primary stroke-2" cx="220" cy="115" r="3"></circle>
+<circle class="fill-white stroke-primary stroke-2" cx="175" cy="190" r="3"></circle>
+<circle class="fill-white stroke-primary stroke-2" cx="100" cy="200" r="3"></circle>
+<circle class="fill-white stroke-primary stroke-2" cx="65" cy="115" r="3"></circle>
+<text class="text-[10px] font-medium fill-text-sub dark:fill-gray-400 tracking-wider font-display uppercase" text-anchor="middle" x="150" y="25">Mindfulness</text>
+<text class="text-[10px] font-medium fill-text-sub dark:fill-gray-400 tracking-wider font-display uppercase" text-anchor="middle" x="270" y="110">Social</text>
+<text class="text-[10px] font-medium fill-text-sub dark:fill-gray-400 tracking-wider font-display uppercase" text-anchor="middle" x="230" y="240">Logic</text>
+<text class="text-[10px] font-medium fill-text-sub dark:fill-gray-400 tracking-wider font-display uppercase" text-anchor="middle" x="70" y="240">Physicality</text>
+<text class="text-[10px] font-medium fill-text-sub dark:fill-gray-400 tracking-wider font-display uppercase" text-anchor="middle" x="30" y="110">Creativity</text>
+</svg>
+</div>
+<div class="w-full flex justify-between items-end mb-4 border-b border-gray-100 dark:border-white/5 pb-2">
+<h3 class="text-lg font-light tracking-wide text-text-main dark:text-white">Active Leads</h3>
+<span class="text-sm font-medium text-primary">5 Total</span>
+</div>
+<div class="w-full group bg-card-light dark:bg-card-dark rounded-2xl p-4 mb-3 shadow-soft flex items-center gap-4 transition-transform active:scale-[0.98]">
+<div class="flex items-center justify-center size-12 rounded-xl bg-green-50 dark:bg-green-900/20 text-primary shrink-0">
+<span class="material-symbols-outlined">potted_plant</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-base font-light tracking-wide text-text-main dark:text-gray-100 truncate">Urban Gardening</h4>
+<span class="text-xs font-medium text-text-sub dark:text-gray-400">Lvl 2</span>
+</div>
+<div class="relative w-full h-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-text-sub dark:text-gray-500 uppercase tracking-widest">Deepening</span>
+<span class="text-[10px] text-text-sub dark:text-gray-500">45/100 XP</span>
+</div>
+</div>
+<button class="text-gray-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="w-full group bg-card-light dark:bg-card-dark rounded-2xl p-4 mb-3 shadow-soft flex items-center gap-4 transition-transform active:scale-[0.98]">
+<div class="flex items-center justify-center size-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-[#6b8cce] shrink-0">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-base font-light tracking-wide text-text-main dark:text-gray-100 truncate">Watercolor</h4>
+<span class="text-xs font-medium text-text-sub dark:text-gray-400">Lvl 1</span>
+</div>
+<div class="relative w-full h-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary rounded-full" style="width: 25%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-text-sub dark:text-gray-500 uppercase tracking-widest">Emerging</span>
+<span class="text-[10px] text-text-sub dark:text-gray-500">25/100 XP</span>
+</div>
+</div>
+<button class="text-gray-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="w-full group bg-card-light dark:bg-card-dark rounded-2xl p-4 mb-3 shadow-soft flex items-center gap-4 transition-transform active:scale-[0.98] border border-primary/20">
+<div class="flex items-center justify-center size-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 text-[#d48c5e] shrink-0">
+<span class="material-symbols-outlined">landscape</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-base font-light tracking-wide text-text-main dark:text-gray-100 truncate">Bouldering</h4>
+<span class="text-xs font-bold text-primary animate-pulse">Flow State</span>
+</div>
+<div class="relative w-full h-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-text-sub dark:text-gray-500 uppercase tracking-widest">Approaching</span>
+<span class="text-[10px] text-text-sub dark:text-gray-500">85/100 XP</span>
+</div>
+</div>
+<button class="text-gray-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="w-full group bg-card-light dark:bg-card-dark rounded-2xl p-4 mb-3 shadow-soft flex items-center gap-4 transition-transform active:scale-[0.98]">
+<div class="flex items-center justify-center size-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-[#9b7ca8] shrink-0">
+<span class="material-symbols-outlined">extension</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-base font-light tracking-wide text-text-main dark:text-gray-100 truncate">Chess Strategy</h4>
+<span class="text-xs font-medium text-text-sub dark:text-gray-400">Lvl 3</span>
+</div>
+<div class="relative w-full h-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary rounded-full" style="width: 15%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-text-sub dark:text-gray-500 uppercase tracking-widest">Mastery</span>
+<span class="text-[10px] text-text-sub dark:text-gray-500">120/500 XP</span>
+</div>
+</div>
+<button class="text-gray-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<div class="fixed bottom-8 left-0 right-0 z-50 px-[52px] w-full max-w-md mx-auto">
+<nav class="flex items-center justify-between px-6 h-[64px] rounded-[32px] bg-white/95 dark:bg-card-dark/95 backdrop-blur-[12px] shadow-dock overflow-hidden">
+<button class="flex items-center justify-center text-icon-inactive hover:text-dock-active transition-colors">
+<span class="material-symbols-outlined text-[24px]">home</span>
+</button>
+<button class="flex items-center justify-center text-icon-inactive hover:text-dock-active transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<div class="relative flex items-center justify-center size-[48px] rounded-full bg-dock-active shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+<span class="material-symbols-outlined text-white text-[24px]">pie_chart</span>
+</div>
+<button class="flex items-center justify-center text-icon-inactive hover:text-dock-active transition-colors">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</button>
+<button class="flex items-center justify-center text-icon-inactive hover:text-dock-active transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+</nav>
+</div>
+</div>
+</body></html>

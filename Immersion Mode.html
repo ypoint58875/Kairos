@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos - Immersion Mode</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8DAA91",
+                        "primary-dark": "#759179",
+                        "background-light": "#F9F7F2",
+                        "background-dark": "#18181b",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#27272a",
+                    },
+                    fontFamily: {
+                        inter: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-inter antialiased transition-colors duration-300">
+<div class="mx-auto max-w-md relative min-h-screen pb-32 flex flex-col">
+<header class="flex items-center justify-between px-6 py-6 z-10">
+<button aria-label="Go back" class="w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors text-gray-800 dark:text-white">
+<span class="material-icons-round text-2xl">arrow_back</span>
+</button>
+<button aria-label="Menu" class="w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors text-gray-800 dark:text-white">
+<span class="material-icons-round text-2xl">more_vert</span>
+</button>
+</header>
+<main class="flex-1 px-6 space-y-8">
+<div class="relative w-full aspect-video rounded-[32px] overflow-hidden shadow-lg group cursor-pointer bg-gray-200 dark:bg-zinc-800">
+<img alt="Close up of hand sketching lines on paper with a pencil" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7wuZ3ysdQGhU8Ep5mpafkkSTLB-AKe_MHaSdlrqOzuX-1WcFK6-hAk8ijFzDfLdKyovKAo3LYgbG6URuTEthG-V3WCvh6xbCFe0QsrY_XX7PU7AOsEyTfg4_PKPO8lHzIfJD-MXcJoEgvy2rC3-Poy0dIgEIihxrAeAyIqQ48hzKh37Dch3zNin_kxjkbHu3I6lZq3ZC36_4QaLM_dsm6-bJcIlS8OcOv-BluJrLI0EyY_JwnrfgeMbRmp2LcseCdg-HOjOhLcQ"/>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-xl">
+<span class="material-icons-round text-white text-4xl ml-1">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400 uppercase">Step 1 of 5</span>
+<span class="px-4 py-1.5 rounded-full bg-gray-200 dark:bg-surface-dark text-xs font-medium text-gray-700 dark:text-gray-300">
+                        Sketching Phase
+                    </span>
+</div>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[20%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-4">
+<h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+                    The Art of the Single Line
+                </h1>
+<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-normal">
+                    Focus on your breath as you draw one continuous line. Let your hand move freely across the paper, capturing the rhythm of your inhales and exhales. Do not lift your pencil.
+                </p>
+</div>
+<div class="bg-[#8DAA91]/10 dark:bg-[#8DAA91]/20 rounded-[24px] p-6 flex gap-4 items-start">
+<div class="flex-shrink-0 mt-0.5">
+<span class="material-icons-round text-primary dark:text-[#A8C5AC]">lightbulb</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-bold text-gray-900 dark:text-white text-base">Pro Tip</h3>
+<p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        Try closing your eyes for a few seconds to feel the tactile connection between the paper and the pencil.
+                    </p>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pointer-events-none mx-auto max-w-md z-20">
+<div class="flex gap-4 pointer-events-auto pt-6">
+<button class="flex-1 py-4 bg-primary hover:bg-primary-dark text-white rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all active:scale-95 group">
+<span class="material-icons-round text-xl group-hover:animate-pulse">videocam</span>
+<span class="font-semibold text-base">Record</span>
+</button>
+<button class="flex-1 py-4 bg-primary hover:bg-primary-dark text-white rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all active:scale-95">
+<span class="material-icons-round text-xl">check_circle</span>
+<span class="font-semibold text-base">Complete</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>

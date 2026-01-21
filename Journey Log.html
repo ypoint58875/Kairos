@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Urban Gardening Journey Log</title>
+<!-- Load Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration for Custom Fonts and Colors -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cream-bg': '#FAF9F6',
+            'charcoal-heading': '#1a1a1a',
+            'grey-body': '#4A4A4A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Specific Nuances -->
+<style data-purpose="typography">
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-cream-bg text-charcoal-heading font-sans min-h-screen">
+<!-- BEGIN: Header -->
+<!-- 
+    Mobile header with back button and centered title. 
+    Using a 3-column grid ensures the title is perfectly centered 
+    regardless of the back button's size.
+  -->
+<header class="sticky top-0 z-50 bg-cream-bg/95 backdrop-blur-sm px-5 py-4 grid grid-cols-[40px_1fr_40px] items-center" data-purpose="mobile-header">
+<!-- Back Button -->
+<button aria-label="Go back" class="flex items-center justify-start text-charcoal-heading hover:opacity-70 transition-opacity">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Title -->
+<h1 class="text-lg font-bold text-center tracking-tight">
+      Urban Gardening
+    </h1>
+<!-- Empty Spacer for Grid Balance -->
+<div aria-hidden="true"></div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="px-5 pb-10" data-purpose="content-wrapper">
+<!-- Section Heading -->
+<section class="mt-2 mb-6">
+<h2 class="text-2xl font-bold text-charcoal-heading">
+        Journey Log
+      </h2>
+</section>
+<!-- BEGIN: Entries List -->
+<div class="flex flex-col gap-8" data-purpose="entries-list">
+<!-- Entry 1: Soil Bed -->
+<article data-purpose="log-entry">
+<!-- Image Container with Relative Positioning for Badge -->
+<figure class="relative w-full mb-4">
+<!-- Badge Overlay -->
+<div class="absolute top-4 left-4 bg-white rounded-full z-10 px-4 py-2 shadow-md" data-purpose="badge">
+<span class="text-[10px] font-bold text-black uppercase tracking-wide block leading-none">
+              Prepared Soil Bed • 2h ago
+            </span>
+</div>
+<!-- Image -->
+<img alt="Freshly tilled dark soil in a garden bed" class="w-full h-[220px] object-cover rounded-[20px] shadow-sm block bg-gray-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1_gZW5t-i17yxLXcGNHVDOvzD03Jel6NEWTF5RqOT9-IuqQ5DdyCenWOQiLNs2x5nK82c4XtT9F1TscW0vPsuogeo3yjD8dH7eVOggBF8iWv52DekjL87tdO61HhJcYkYY7eL6qiOAf1ren8eJ8L8RAmy-R8weDiK-HwSenWvYmCT2yOvdGRT03TOXXOMsNJ3-KgfQOqkR2iBgv7VxTeEZ7LOCyhfwOj-_5AThuQEtxcf0afYAE9V87uh35Dy8nheFxwOPFN9Bw"/>
+</figure>
+<!-- Description Text -->
+<p class="text-grey-body text-[15px] leading-relaxed mt-4">
+          Starting the layout for the new garden bed. The soil texture feels perfect this time of year.
+        </p>
+</article>
+<!-- Entry 2: First Germination -->
+<article data-purpose="log-entry">
+<!-- Image Container -->
+<figure class="relative w-full mb-4">
+<!-- Badge Overlay -->
+<div class="absolute top-4 left-4 bg-white rounded-full z-10 px-4 py-2 shadow-md" data-purpose="badge">
+<span class="text-[10px] font-bold text-black uppercase tracking-wide block leading-none">
+              First Germination • 5 days ago
+            </span>
+</div>
+<!-- Image -->
+<img alt="Small green sprouts emerging from the soil in morning light" class="w-full h-[220px] object-cover rounded-[20px] shadow-sm block bg-gray-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwdcBIl6V6w_W0Do_q3a54bszHYk_v9C0EW3bATjnzXuZLobts5CIIopwFOPF0mtGn0ONNsH2YcYzX1ln7o3qTqnPvVbopQSu6gOCExcpnnZB99aJu5Og_2GtWzRJXYUwSkaI_qRe4pQhxjOka-C3Q5pkygg8ZBjPiX91-0C1PuxjOeMQnumtsEI1JdGICyIbb_HfsTYI7uOyX-t1yYPX9q-VR-SFXOrk9XU8dMI5BHT11N66RiNOo2xRs2Jzxx3kSaWf4u9UIxw"/>
+</figure>
+<!-- Description Text -->
+<p class="text-grey-body text-[15px] leading-relaxed mt-4">
+          First sprouts appearing! It's amazing how quickly they respond to the morning sun.
+        </p>
+</article>
+</div>
+<!-- END: Entries List -->
+</main>
+<!-- END: Main Content -->
+</body></html>

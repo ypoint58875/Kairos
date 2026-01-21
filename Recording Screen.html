@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pottery Recording App</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- FontAwesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom Font: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'glass-dark': 'rgba(20, 20, 20, 0.6)',
+            'glass-lighter': 'rgba(255, 255, 255, 0.1)',
+            'pottery-green': '#A3B18A', // Muted green for progress bar
+            'pottery-green-dark': '#588157',
+            'rec-red': '#FF4D4D',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Custom utility for the background blur effect on glass elements */
+    .backdrop-blur-md {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    /* Ensure the background image covers properly without distortion */
+    .bg-cover-center {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Custom progress bar styling */
+    .progress-bar-container {
+      position: relative;
+      height: 4px;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.3);
+      flex-grow: 1;
+      margin: 0 12px;
+    }
+    
+    .progress-bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: #A3B18A;
+      border-radius: 2px;
+      width: 45%; /* Example progress */
+    }
+
+    /* Stop button distinct outline */
+    .stop-btn-ring {
+      border: 4px solid #A8B898;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-screen w-full overflow-hidden text-white font-sans antialiased">
+<!-- BEGIN: Main Container -->
+<!-- This container holds the full screen background image and the layout overlay -->
+<main class="relative h-full w-full bg-cover-center flex flex-col justify-between" data-purpose="app-background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDB1XLWTOA8z4Fu0f6SS-dlIZbd3dx5NxEl6ZuBXJ1RRBEHnFZxglChufdSlh46G_ci7gLplWhSM_rNWFpcvy8ONr6XTgZrB4B3BW73F7F6NCYQ0lJRCZFtCeQo0WwM_feaWtGenzP-SB1UPmPFXPloDLzkuitLfx0oMKeAj0matB-b2rKFYIRiR-QW41CMouEKNlPPBXxRPYpQ9-KEm5QE_NFGVWsQSoQPzDD5Myvdmc7GNKH1QHG6AlE2G4DnfmDwi8l_HUDew');">
+<!-- Dark overlay to ensure text readability on top of background image -->
+<div class="absolute inset-0 pointer-events-none bg-black/40"></div>
+<!-- BEGIN: Top Section -->
+<header class="relative z-10 flex flex-col items-center pt-12 px-6 space-y-6">
+<!-- Recording Status Badge -->
+<div class="flex items-center space-x-3 bg-glass-dark backdrop-blur-md px-5 py-2 rounded-full border border-white/10" data-purpose="status-badge">
+<div class="w-2.5 h-2.5 rounded-full animate-pulse bg-green-500"></div>
+<span class="text-sm font-mono tracking-widest font-medium">04:21</span>
+<span class="text-white/40">|</span>
+<span class="text-xs font-bold tracking-wider text-white/90">REC</span>
+</div>
+<!-- Instruction Text -->
+<div class="text-center space-y-1">
+<h1 class="text-xl md:text-2xl font-bold tracking-tight drop-shadow-md">Step 3: Centering the Clay</h1>
+<p class="text-sm md:text-base text-white/80 font-medium drop-shadow-sm">Keep your elbows tucked in</p>
+</div>
+</header>
+<!-- END: Top Section -->
+<!-- BEGIN: Center Floating Card (Tutorial) -->
+<!-- This section floats in the middle, pushing content slightly via flex spacing -->
+<section class="relative z-10 flex-1 flex items-center justify-center px-6" data-purpose="tutorial-card-container">
+<div class="relative w-full max-w-sm aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black/40 border border-white/10 backdrop-blur-sm group">
+<!-- Card Background Image -->
+<img alt="Tutorial Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtWM3aq917SvKr8ghOfGk_fY3Mj1Gs8Lot_C2qI6FnSrLuYs2Hy5mWvsQrJpp2BLQMGD3lwoHRMR_yAHMqu8jSUmakgiSJ-pbg-bF_ZDZ2RfbfgcY7er-novCXsocSN-viKgTWOvtF2UzW9zcQvnypMEBrz8XFME_sb4IA2pDOFHPNuMM1RCwp-tF1n7h_O6pxloDxh726lx8GsYBM0ggVXgPt4_zX_Xch4j005NCp-fEOym2F-FQ_aauVQqCvGOK8YJ-aUVgSFw"/>
+<!-- Gradient Overlay for Text Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<!-- Top Row: Label and Info Icon -->
+<div class="absolute top-4 left-4 right-4 flex justify-between items-start">
+<div class="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/10">
+<span class="text-[9px] font-semibold tracking-widest uppercase text-white/90">Tutorial</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md transition-colors">
+<i class="fa-solid fa-info text-xs"></i>
+</button>
+</div>
+<!-- Bottom Content -->
+<div class="absolute bottom-0 left-0 right-0 p-5 space-y-4">
+<!-- Title Section -->
+<div>
+<p class="text-[10px] font-semibold text-pottery-green uppercase tracking-widest mb-1">Expert Guide</p>
+<h2 class="text-xl font-bold leading-tight">"Pulling the Walls"</h2>
+</div>
+<!-- Player Controls -->
+<div class="flex items-center justify-between">
+<button class="w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-colors">
+<i class="fa-solid fa-pause text-xs"></i>
+</button>
+<!-- Custom Progress Bar -->
+<div class="progress-bar-container" data-purpose="video-progress">
+<div class="progress-bar-fill"></div>
+</div>
+<span class="text-xs font-mono text-white/80">01:14</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Center Floating Card -->
+<!-- BEGIN: Bottom Controls -->
+<footer class="relative z-10 pb-12 pt-6 px-8 flex flex-col items-center space-y-8 bg-gradient-to-t from-black/80 to-transparent" data-purpose="footer-controls">
+<!-- Status Text -->
+<div class="text-sm font-medium text-amber-50/90 tracking-wide drop-shadow-md animate-pulse">
+        Recording Flow State...
+      </div>
+<!-- Button Row -->
+<div class="flex items-center justify-between w-full max-w-xs">
+<!-- Mic Toggle -->
+<button aria-label="Microphone" class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/10 transition-all active:scale-95">
+<i class="fa-solid fa-microphone text-white text-lg"></i>
+</button>
+<!-- Stop Recording Button (Main Action) -->
+<button aria-label="Stop Recording" class="relative w-20 h-20 rounded-full stop-btn-ring flex items-center justify-center bg-pottery-green/20 backdrop-blur-sm transition-all active:scale-95">
+<!-- Inner Circle Fill -->
+<div class="w-16 h-16 bg-pottery-green rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
+<!-- Stop Square -->
+<div class="w-6 h-6 bg-black/80 rounded-sm"></div>
+</div>
+</button>
+<!-- Camera Flip -->
+<button aria-label="Flip Camera" class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/10 transition-all active:scale-95">
+<i class="fa-solid fa-rotate text-white text-lg"></i>
+</button>
+</div>
+</footer>
+<!-- END: Bottom Controls -->
+</main>
+<!-- END: Main Container -->
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kairos Connections</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8daa91",
+              "primary-dark": "#758f78",
+              "background-light": "#F9F8F4", // Parchment White
+              "background-dark": "#181a18",
+              "text-main": "#2C3E2E", // Dark Slate Green/Grey
+              "text-muted": "#727973",
+              "nav-active": "#4A634E",
+              "sage-moss": "#4A5D4E",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", // 32px as requested for cards
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+            animation: {
+                "breathe": "breathe 4s ease-in-out infinite",
+            },
+            keyframes: {
+                breathe: {
+                    '0%, 100%': { boxShadow: '0 0 0px rgba(141, 170, 145, 0)' },
+                    '50%': { boxShadow: '0 0 12px rgba(141, 170, 145, 0.6)', borderColor: '#8daa91' },
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    body { min-height: max(884px, 100dvh); }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden pb-32">
+<header class="flex flex-col gap-6 p-6 pt-12">
+<div class="flex items-center justify-between w-full">
+<span class="text-primary font-medium tracking-wide text-sm uppercase">Kairos</span>
+<button class="relative size-12 shrink-0 overflow-hidden rounded-full border-2 border-white shadow-sm ring-1 ring-primary/20 transition-transform active:scale-95">
+<img alt="Profile Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8jbWlpS3dRah4ih67bAjB3PwYsvNWRwWTMqC7oTD8ev4AA6g8Y0_T1iXgyAajJFu1TeAa70t8MuA8Ec7kZAm_uohmBxWi1PxH5k29lj-XD8AASg98JzrT3HkkwTGqO6BzBbCAh-mA5FKAiWhQo937JSpTSSBschEr9IJF3rDVRIPMmGjaCnsEyfL3ef1v5rVWWLtXqr3um9xXfdR_Hr4aCh1fS8tE_xVOltjvqShAzU92qPs_qpbRYbkfGJsSysb5Ot-h1pgnVg"/>
+</button>
+</div>
+<div class="flex flex-col gap-6">
+<h1 class="text-[32px] font-bold text-[#141514] dark:text-white leading-tight tracking-tight">Connections</h1>
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-text-muted text-xl transition-colors group-focus-within:text-primary">search</span>
+<input class="w-full rounded-lg border-none bg-white py-4 pl-14 pr-4 text-base shadow-sm ring-1 ring-black/5 placeholder:text-text-muted/80 focus:ring-2 focus:ring-primary/50 dark:bg-[#252525] dark:ring-white/10 dark:text-white transition-all" placeholder="Find friends &amp; communities..." type="text"/>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-4 px-6">
+<button class="flex w-full flex-col gap-3 rounded-lg bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] ring-1 ring-black/5 transition-all active:scale-[0.98] dark:bg-[#252525] dark:ring-white/5 hover:shadow-md">
+<div class="flex w-full items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="size-14 shrink-0 overflow-hidden rounded-full ring-2 ring-background-light dark:ring-[#333]">
+<img alt="Avery" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oe0QHEFagOqx0uYROviPLWDWZSSG_xY9Qfp-d74KEBQeuWhVp0hC9rvDVwVXmpGOaJDbbivI19ZbkH5uI4Skvt7SQIOFDKHOgJNTPaWN445XGegxgXsNjBNwZwyMbSn9I4bfqlHbVxamAtW_9HV0wySrgyfEebVOkXFcI3ujVlrPYgzsfzsu0jzi6akmXDyJc0Bmd4y3qyUpJ1OJLY4GZ3hBWeHkTSkImMh9UR8utMW0Q3tA-xvReyo1-RZhVGhPDh0X2zaosQ"/>
+</div>
+<div class="flex flex-col items-start">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Avery</h3>
+<div class="flex items-center gap-1.5 rounded-full bg-sage-moss/10 px-2 py-0.5 mt-0.5">
+<span class="inline-block size-1.5 rounded-full bg-sage-moss"></span>
+<span class="text-[11px] font-semibold text-sage-moss dark:text-primary uppercase tracking-wide">Flowing</span>
+</div>
+</div>
+</div>
+<span class="text-xs font-medium text-text-muted/70">10:42 AM</span>
+</div>
+<p class="w-full text-left text-sm leading-relaxed text-text-muted line-clamp-2">
+                The meditation session this morning was exactly what I needed. Let's sync up later?
+             </p>
+</button>
+<button class="flex w-full flex-col gap-3 rounded-lg bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] ring-1 ring-black/5 transition-all active:scale-[0.98] dark:bg-[#252525] dark:ring-white/5 hover:shadow-md">
+<div class="flex w-full items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#f4ebd9] text-[#8c7356] ring-2 ring-background-light dark:bg-[#3d362a] dark:text-[#d9c4a8] dark:ring-[#333]">
+<span class="material-symbols-outlined text-2xl">palette</span>
+</div>
+<div class="flex flex-col items-start">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Pottery Den</h3>
+<div class="flex items-center gap-1.5 px-0.5 mt-0.5">
+<span class="inline-block size-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[11px] font-semibold text-text-muted uppercase tracking-wide">Active now</span>
+</div>
+</div>
+</div>
+<span class="flex items-center justify-center size-5 rounded-full bg-primary text-[10px] font-bold text-white shadow-sm">2</span>
+</div>
+<p class="w-full text-left text-sm leading-relaxed text-text-muted line-clamp-2">
+<span class="font-semibold text-text-main dark:text-gray-300">Marcus:</span> Just unloaded the kiln! The new batch looks incredible. Come check it out.
+             </p>
+</button>
+<button class="flex w-full flex-col gap-3 rounded-lg bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] ring-1 ring-black/5 transition-all active:scale-[0.98] dark:bg-[#252525] dark:ring-white/5 hover:shadow-md">
+<div class="flex w-full items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="size-14 shrink-0 overflow-hidden rounded-full ring-2 ring-background-light dark:ring-[#333]">
+<img alt="Leo" class="h-full w-full object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCoRp6fuKicD7kErvZkEmr8PPlIi95Y5KxIwDIbY6MVz4ROG4xvI1BKVnh6g32BGF0iiHTRjgAfI--5n6egUjCP7ot7A3XHBqP3lc9fNjbAdBIY_M_BkcdVM1MpPqK1ypXVJb5_mswgIQH1LeJQcOZS-LgXHhbqUt9NgJ3A4YfQKwpYf3mkSgO12R4egpgMJZRJHKPXQ5QVBrNIbleaShv-o3VQJ97BG2aM_oXKoH7O7dhlEOXDysBBq1-XolN8w8n3tD_4jfi7w"/>
+</div>
+<div class="flex flex-col items-start">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Leo</h3>
+<div class="flex items-center gap-1.5 px-0.5 mt-0.5">
+<span class="inline-block size-1.5 rounded-full bg-gray-300"></span>
+<span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">Quiet</span>
+</div>
+</div>
+</div>
+<span class="text-xs font-medium text-text-muted/70">Tue</span>
+</div>
+<p class="w-full text-left text-sm leading-relaxed text-text-muted line-clamp-2">
+                Sent you the coordinates for the hike. Don't forget water!
+             </p>
+</button>
+<button class="flex w-full flex-col gap-3 rounded-lg bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] ring-1 ring-black/5 transition-all active:scale-[0.98] dark:bg-[#252525] dark:ring-white/5 hover:shadow-md">
+<div class="flex w-full items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#dcfce7] text-[#166534] ring-2 ring-background-light dark:bg-[#052e16] dark:text-[#86efac] dark:ring-[#333]">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<div class="flex flex-col items-start">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Hydroponics Club</h3>
+<div class="flex items-center gap-1.5 px-0.5 mt-0.5">
+<span class="inline-block size-1.5 rounded-full bg-green-500"></span>
+<span class="text-[11px] font-semibold text-green-600 dark:text-green-400 uppercase tracking-wide">Growing</span>
+</div>
+</div>
+</div>
+<span class="text-xs font-medium text-text-muted/70">Mon</span>
+</div>
+<p class="w-full text-left text-sm leading-relaxed text-text-muted line-clamp-2">
+<span class="font-semibold text-text-main dark:text-gray-300">Sarah:</span> Nutrient levels stabilized. The basil is exploding!
+             </p>
+</button>
+<div class="h-20 w-full"></div> 
+</main>
+<div class="fixed bottom-8 left-[52px] right-[52px] z-50 flex h-[64px] items-center justify-between rounded-[32px] bg-white/90 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:bg-[#1E1E1E]/90 ring-1 ring-black/5">
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95 dark:text-gray-400 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">home</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95 dark:text-gray-400 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95 dark:text-gray-400 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">pie_chart</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full bg-[#4A5D4E] text-white shadow-lg shadow-[#4A5D4E]/30 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full text-[#5A5A5A] transition-colors hover:bg-black/5 active:scale-95 dark:text-gray-400 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+</div>
+
+</body></html>
